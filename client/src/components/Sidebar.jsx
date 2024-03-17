@@ -3,80 +3,62 @@ function Sidebar() {
   return (
     <>
       <div>
-        <div
-          className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark"
-          style={{ width: "280px", height: "100%" }}
+        <nav
+          id="sidebarMenu"
+          className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
         >
-          <a
-            href="/"
-            className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
-          >
-            <svg className="bi me-2" width="40" height="32"></svg>
-            <span className="fs-4">Sidebar</span>
-          </a>
-          <hr />
-          <ul className="nav nav-pills flex-column mb-auto">
-            <li className="nav-item">
-              <a href="#" className="nav-link active" aria-current="page">
-                <svg className="bi me-2" width="16" height="16"></svg>
-                Home
+          <div className="position-sticky pt-3">
+            <ul className="nav flex-column">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#">
+                  <span data-feather="home"></span>
+                  Home
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  <span data-feather="file"></span>
+                  Dashboard
+                </a>
+              </li>
+              
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  Reports
+                </a>
+              </li>
+    
+            </ul>
+
+            <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Saved reports</span>
+              <a
+                className="link-secondary"
+                href="#"
+                aria-label="Add a new report"
+              >
+                <span data-feather="plus-circle"></span>
               </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link text-white">
-                <svg className="bi me-2" width="16" height="16"></svg>
-                Dashboard
-              </a>
-            </li>
-          </ul>
-          <hr />
-          <div className="dropdown">
-            <a
-              href="#"
-              className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-              id="dropdownUser1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img
-                src={"https://github.com/mdo.png"}
-                alt=""
-                width="32"
-                height="32"
-                className="rounded-circle me-2"
-              />
-              <strong>mdo</strong>
-            </a>
-            <ul
-              className="dropdown-menu dropdown-menu-dark text-small shadow"
-              aria-labelledby="dropdownUser1"
-            >
-              <li>
-                <a className="dropdown-item" href="#">
-                  New project...
+            </h6>
+            <ul className="nav flex-column mb-2">
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Current month
                 </a>
               </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Settings
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Last quarter
                 </a>
               </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Profile
-                </a>
-              </li>
-              <li>
-                <hr className="dropdown-divider" />
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Sign out
-                </a>
-              </li>
+              
             </ul>
           </div>
-        </div>
+        </nav>
       </div>
     </>
   );
