@@ -1,7 +1,15 @@
+// Import files
+import React, { useEffect } from "react";
+import createChart from "../assets/dashboard";
+
 function Content() {
+  useEffect(() => {
+    const ctx = document.getElementById("myChart");
+    createChart(ctx);
+  }, []);
   return (
     <>
-      <div>
+      <div className="mt-5">
         <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 className="h2">Dashboard</h1>
@@ -9,15 +17,15 @@ function Content() {
               <div className="btn-group me-2"></div>
             </div>
           </div>
-
+          {/* Graph / Diagram */}
           <canvas
             className="my-4 w-100"
             id="myChart"
             width="900"
             height="380"
           ></canvas>
-
-          <h2>Section title</h2>
+          {/* Records */}
+          <h2>Datasheet</h2>
           <div className="table-responsive">
             <table className="table table-striped table-sm">
               <thead>
