@@ -46,13 +46,7 @@ function Sidebar() {
               <li className="nav-item">
                 <a className="nav-link" href="#">
                   <span data-feather="file-text"></span>
-                  Current month
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Last quarter
+                  Google Drive
                 </a>
               </li>
               

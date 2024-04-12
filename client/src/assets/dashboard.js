@@ -6,12 +6,12 @@ const createChart = (ctx) => {
   if (ctx) {
     // Destroy existing chart instance if it exists
     //
-    let chartStatus = Chart.getChart("myChart"); // canva's id
+    let chartStatus = Chart.getChart("windChart"); // canva's id
     if (chartStatus != undefined) {
       chartStatus.destroy();
     }
     // Create new chart
-    const myChart = new Chart(ctx, {
+    const windChart = new Chart(ctx, {
       type: "line",
       data: {
         labels: [
@@ -25,12 +25,22 @@ const createChart = (ctx) => {
         ],
         datasets: [
           {
-            data: [23, 55, 79, 27, 27, 32, 70],
+            label: "Average wind speed (m/s)",
+            data: [5, 2, 5, 10, 7, 2, 6],
             lineTension: 0,
             backgroundColor: "transparent",
             borderColor: "#007bff",
             borderWidth: 4,
             pointBackgroundColor: "#007bff",
+          },
+          {
+            label: "Max wind speed (m/s)",
+            data: [15, 26, 15, 17, 19, 12, 12],
+            lineTension: 0,
+            backgroundColor: "transparent",
+            borderColor: "#FE777B",
+            borderWidth: 4,
+            pointBackgroundColor: "#FE777B",
           },
         ],
       },
@@ -50,7 +60,7 @@ const createChart = (ctx) => {
       },
     });
   } else {
-    console.error("Canvas element with id 'myChart' not found.");
+    console.error("Canvas element with id 'windChart' not found.");
   }
 };
 

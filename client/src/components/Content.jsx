@@ -4,7 +4,7 @@ import createChart from "../assets/dashboard";
 
 function Content() {
   useEffect(() => {
-    const ctx = document.getElementById("myChart");
+    const ctx = document.getElementById("windChart");
     createChart(ctx);
   }, []);
   return (
@@ -20,7 +20,7 @@ function Content() {
           {/* Graph / Diagram */}
           <canvas
             className="my-4 w-100"
-            id="myChart"
+            id="windChart"
             width="900"
             height="380"
           ></canvas>
@@ -30,11 +30,13 @@ function Content() {
             <table className="table table-striped table-sm">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Header</th>
-                  <th scope="col">Header</th>
-                  <th scope="col">Header</th>
-                  <th scope="col">Header</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Temperature (C)</th>
+                  <th scope="col">Humidity (%)</th>
+                  <th scope="col">Barometric Pressure (Pascals)</th>
+                  <th scope="col">Average wind speed (m/s)</th>
+                  <th scope="col">Max wind speed (m/s)</th>
+                  <th scope="col">Wind direction (degree)</th>
                 </tr>
               </thead>
               <tbody>
@@ -44,6 +46,7 @@ function Content() {
                   <td>data</td>
                   <td>placeholder</td>
                   <td>text</td>
+                  <td>N/A</td>
                 </tr>
                 <tr>
                   <td>1,002</td>
