@@ -10,10 +10,10 @@ function App() {
   return (
     <>
       <div>
-        <Header/>
-        <div className="container-fluid">
-          <div className="row">
+        <div className="container-fluid main-bg">
+          <div className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <Sidebar />
+            <Header />
             <Content />
           </div>
         </div>

@@ -4,7 +4,6 @@ import {
   CategoryScale,
   LinearScale,
   PointElement,
-  LineElement,
   Title,
   Tooltip,
   Legend,
@@ -35,7 +34,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Average Wind Speed (m/s)",
+      text: "Average Rain (mm)",
     },
   },
 };
@@ -44,7 +43,7 @@ function RainChart() {
   //   const [chartData, setChartData] = useState(rainData);
   return (
     <>
-      <div className="col-5">
+      <div className="col-6">
         <Bar data={rainData} options={options} />
       </div>
     </>

@@ -33,11 +33,128 @@ function Content() {
         {loading ? (
           <h4>Loading...</h4>
         ) : (
-          <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <main className="">
             <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-              <h1 className="h2">Dashboard</h1>
+              <h1 className="h2 mt-3">Dashboard</h1>
               <div className="btn-toolbar mb-2 mb-md-0">
                 <div className="btn-group me-2"></div>
+              </div>
+            </div>
+
+            {/* Card data */}
+            <div className="row">
+              {/* 1st Card */}
+              <div className="col-xl-3 col-md-6">
+                <div className="card card-stats">
+                  <div className="card-body">
+                    <div className="row">
+                      <div className="col-5">
+                        <div className="icon-big text-center">
+                          <div className="icon-warning">
+                            <i className="nc-icon nc-chart text-warning"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-7">
+                        <div className="numbers">
+                          <div>
+                            <p className="card-category">Status</p>
+                            <h4 className="card-title">
+                              <span className="badge badge-success">0</span>
+                              Online
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-footer">
+                    <div className="stats text-muted">
+                      <div>Updated now</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* 2nd Card */}
+              <div className="col-xl-3 col-md-6">
+                <div className="card card-stats">
+                  <div className="card-body">
+                    <div className="row">
+                      <div className="col-5">
+                        <div className="icon-big text-center">
+                          <div className="icon-success"></div>
+                        </div>
+                      </div>
+                      <div className="col-7">
+                        <div className="numbers">
+                          <div>
+                            <p className="card-category">Temperature</p>
+                            <h4 className="card-title">39°C</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-footer">
+                    <div className="stats text-muted">
+                      <div>Yesterday</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* 3rd Card */}
+              <div className="col-xl-3 col-md-6">
+                <div className="card card-stats">
+                  <div className="card-body">
+                    <div className="row">
+                      <div className="col-5">
+                        <div className="icon-big text-center">
+                          <div className="icon-danger"></div>
+                        </div>
+                      </div>
+                      <div className="col-7">
+                        <div className="numbers">
+                          <div>
+                            <p className="card-category">Humidity</p>
+                            <h4 className="card-title">23%</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-footer">
+                    <div className="stats text-muted">
+                      <div>Yesterday</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* 4th Card */}
+              <div className="col-xl-3 col-md-6">
+                <div className="card card-stats">
+                  <div className="card-body">
+                    <div className="row">
+                      <div className="col-5">
+                        <div className="icon-big text-center">
+                          <div className="icon-info"></div>
+                        </div>
+                      </div>
+                      <div className="col-7">
+                        <div className="numbers">
+                          <div>
+                            <p className="card-category">Barometric Pressure</p>
+                            <h4 className="card-title">100700 Pa</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-footer">
+                    <div className="stats text-muted">
+                      <div>Updated now</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -49,7 +166,38 @@ function Content() {
                 width="800"
                 height="180"
                 ></canvas> */}
+              {/* Wind statistic */}
+              <div className="col-3">
+                <div className="card h-100">
+                  <div className="card-body">
+                    <div className="row">
+                      <div className="col-5">
+                        <div className="icon-big text-center">
+                          <div className="icon-info"></div>
+                        </div>
+                      </div>
+                      <div className="col-7">
+                        <div className="numbers">
+                          <div>
+                            <p className="card-category">Barometric Pressure</p>
+                            <h4 className="card-title">100700 Pa</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-footer">
+                    <div className="stats text-muted">
+                      <div>Updated now</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Wind chart */}
               <WindChart />
+            </div>
+            <div className="row my-4">
+              <RainChart />
               <RainChart />
             </div>
 

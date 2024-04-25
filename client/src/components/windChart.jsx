@@ -38,7 +38,7 @@ function WindChart() {
 //   const [chartData, setChartData] = useState(windData);
   return (
     <>
-      <div className="col-xl-7 col-lg-7 col-md-12 col-sm-12">
+      <div className="col-9">
         <Line options={options} data={windData} />
       </div>
     </>

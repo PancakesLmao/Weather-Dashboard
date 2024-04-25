@@ -2,12 +2,16 @@
 function Sidebar() {
   return (
     <>
-      <div>
+      <div className="sideBar">
         <nav
           id="sidebarMenu"
-          className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+          className="col-md-3 col-lg-2 d-md-block bg-secondary sidebar collapse"
         >
-          <div className="position-sticky pt-3">
+          <div className="position-sticky text-white">
+            <div className="container">
+              <h3 className="nav-brand px-3 pb-4">AsianMurphy</h3>
+            </div>
+
             <ul className="nav flex-column">
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">
@@ -22,17 +26,16 @@ function Sidebar() {
                   Dashboard
                 </a>
               </li>
-              
+
               <li className="nav-item">
                 <a className="nav-link" href="#">
                   <span data-feather="bar-chart-2"></span>
                   Reports
                 </a>
               </li>
-    
             </ul>
 
-            <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-light">
               <span>Saved reports</span>
               <a
                 className="link-secondary"
@@ -49,7 +52,6 @@ function Sidebar() {
                   Google Drive
                 </a>
               </li>
-              
             </ul>
           </div>
         </nav>

@@ -34,13 +34,22 @@ export const rainData = {
   labels: ["March", "April", "May"],
   datasets: [
     {
-      label: "Sales",
+      label: "Average Rainfall",
+      backgroundColor: "rgba(29, 199, 234,0.2)",
+      borderColor: "rgba(75,192,192,1)",
+      borderWidth: 1,
+      hoverBackgroundColor: "rgba(29, 199, 234,0.4)",
+      hoverBorderColor: "rgba(75,192,192,1)",
+      data: [65, 59, 80],
+    },
+    {
+      label: "Maximum",
       backgroundColor: "rgba(75,192,192,0.2)",
       borderColor: "rgba(75,192,192,1)",
       borderWidth: 1,
       hoverBackgroundColor: "rgba(75,192,192,0.4)",
       hoverBorderColor: "rgba(75,192,192,1)",
-      data: [65, 59, 80],
+      data: [55, 49, 90],
     },
   ],
 };
