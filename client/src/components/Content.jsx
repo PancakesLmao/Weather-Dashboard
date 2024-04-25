@@ -169,7 +169,8 @@ function Content() {
               {/* Wind statistic */}
               <div className="col-3">
                 <div className="card h-100">
-                  <div className="card-body">
+                    <div className="card-body">
+                      {/* 1st row */}
                     <div className="row">
                       <div className="col-5">
                         <div className="icon-big text-center">
@@ -185,6 +186,41 @@ function Content() {
                         </div>
                       </div>
                     </div>
+                    <hr />
+                    {/* 2nd row */}
+                    <div className="row">
+                      <div className="col-5">
+                        <div className="icon-big text-center">
+                          <div className="icon-info"></div>
+                        </div>
+                      </div>
+                      <div className="col-7">
+                        <div className="numbers">
+                          <div>
+                            <p className="card-category">Barometric Pressure</p>
+                            <h4 className="card-title">100700 Pa</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    {/* 3rd row */}
+                    <div className="row">
+                      <div className="col-5">
+                        <div className="icon-big text-center">
+                          <div className="icon-info"></div>
+                        </div>
+                      </div>
+                      <div className="col-7">
+                        <div className="numbers">
+                          <div>
+                            <p className="card-category">Barometric Pressure</p>
+                            <h4 className="card-title">100700 Pa</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
                   </div>
                   <div className="card-footer">
                     <div className="stats text-muted">
