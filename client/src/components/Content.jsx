@@ -2,6 +2,11 @@
 import React, { useState, useEffect } from "react";
 import WindChart from "./windChart";
 import RainChart from "./rainChart";
+import { LuWaves } from "react-icons/lu";
+
+// icons
+import { FaTemperatureHigh } from "react-icons/fa";
+import { WiHumidity } from "react-icons/wi";
 
 function Content() {
   // set stage for loading page
@@ -82,7 +87,9 @@ function Content() {
                     <div className="row">
                       <div className="col-5">
                         <div className="icon-big text-center">
-                          <div className="icon-success"></div>
+                          <div className="sensor-icon">
+                            <FaTemperatureHigh />
+                          </div>
                         </div>
                       </div>
                       <div className="col-7">
@@ -109,7 +116,9 @@ function Content() {
                     <div className="row">
                       <div className="col-5">
                         <div className="icon-big text-center">
-                          <div className="icon-danger"></div>
+                          <div className="sensor-icon">
+                            <WiHumidity />
+                          </div>
                         </div>
                       </div>
                       <div className="col-7">
@@ -136,7 +145,9 @@ function Content() {
                     <div className="row">
                       <div className="col-5">
                         <div className="icon-big text-center">
-                          <div className="icon-info"></div>
+                          <div className="sensor-icon">
+                            <LuWaves />
+                          </div>
                         </div>
                       </div>
                       <div className="col-7">
@@ -169,8 +180,8 @@ function Content() {
               {/* Wind statistic */}
               <div className="col-3">
                 <div className="card h-100">
-                    <div className="card-body">
-                      {/* 1st row */}
+                  <div className="card-body">
+                    {/* 1st row */}
                     <div className="row">
                       <div className="col-5">
                         <div className="icon-big text-center">
@@ -180,8 +191,8 @@ function Content() {
                       <div className="col-7">
                         <div className="numbers">
                           <div>
-                            <p className="card-category">Barometric Pressure</p>
-                            <h4 className="card-title">100700 Pa</h4>
+                            <p className="card-category">Avg Wind Speed</p>
+                            <h4 className="card-title">0 m/s</h4>
                           </div>
                         </div>
                       </div>
@@ -197,8 +208,8 @@ function Content() {
                       <div className="col-7">
                         <div className="numbers">
                           <div>
-                            <p className="card-category">Barometric Pressure</p>
-                            <h4 className="card-title">100700 Pa</h4>
+                            <p className="card-category">Max Wind Speed</p>
+                            <h4 className="card-title">0 m/s</h4>
                           </div>
                         </div>
                       </div>
@@ -214,13 +225,12 @@ function Content() {
                       <div className="col-7">
                         <div className="numbers">
                           <div>
-                            <p className="card-category">Barometric Pressure</p>
-                            <h4 className="card-title">100700 Pa</h4>
+                            <p className="card-category">Wind Direction</p>
+                            <h4 className="card-title">0 °</h4>
                           </div>
                         </div>
                       </div>
                     </div>
-                  
                   </div>
                   <div className="card-footer">
                     <div className="stats text-muted">
@@ -233,7 +243,6 @@ function Content() {
               <WindChart />
             </div>
             <div className="row my-4">
-              <RainChart />
               <RainChart />
             </div>
 

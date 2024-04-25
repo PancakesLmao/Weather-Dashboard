@@ -36,6 +36,39 @@ body {
     top: 5rem;
   }
 }
+.sidebar {
+  background-image: url(https://images2.alphacoders.com/135/1355608.png);
+  background-color:#272828;
+}
+
+/* sidebar dark layer */
+.sidebar:before {
+  opacity: 0.33;
+  background-color: #272828;
+}
+.sidebar[data-color=black]:after {
+    background: #292929;
+    background: linear-gradient(180deg, #292929, #0e0e0e);
+    background-size: 150% 150%; 
+    opacity: 0.6;
+  }
+.sidebar:after, .sidebar:before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+
+/* prioritize menu layer */
+.side-content {
+  position: relative;
+  z-index: 4;
+}
 
 .sidebar-sticky {
   position: relative;
@@ -46,10 +79,32 @@ body {
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
+.logo {
+    padding: 10px 5px;
+    margin: 0 20px;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .2);
+    position: relative;
+}
+
 .sidebar .nav-link {
   font-weight: 500;
-  /* color: #333; */
   color: white;
+}
+
+.sidebar .nav-link:hover {
+  color: wheat;
+}
+
+.side-icon {
+  float: left;
+  font-size: 24px;
+}
+.head-icon {
+  float: right;
+  font-size: 24px;
+}
+.sensor-icon {
+  font-size: 50px;
 }
 
 .sidebar .nav-link .feather {
@@ -60,7 +115,7 @@ body {
 
 .sidebar .nav-link.active {
   /* color: #2470dc; */
-  /* color: wheat; */
+  color: wheat;
 }
 
 .sidebar .nav-link:hover .feather,
@@ -107,6 +162,9 @@ body {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
 
+.header-box {
+  overflow: hidden;
+}
 /* Cards */
 .card-footer {
   background-color: transparent !important;

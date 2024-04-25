@@ -10,7 +10,7 @@ import {
   BarElement,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { rainData } from "../assets/chartData";
+import { rainData1, rainData2 } from "../assets/chartData";
 //
 ChartJS.register(
   CategoryScale,
@@ -30,11 +30,11 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      display: false,
+      position: 'bottom',
     },
     title: {
       display: true,
-      text: "Average Rain (mm)",
+      text: "Rainfall in day (mm)",
     },
   },
 };
@@ -44,7 +44,10 @@ function RainChart() {
   return (
     <>
       <div className="col-6">
-        <Bar data={rainData} options={options} />
+        <Bar options={options} data={rainData1} />
+      </div>
+      <div className="col-6">
+        <Bar options={options} data={rainData2} />
       </div>
     </>
   );

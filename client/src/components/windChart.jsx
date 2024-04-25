@@ -25,7 +25,7 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      display: false,
+      position: 'top',
     },
     title: {
       display: true,

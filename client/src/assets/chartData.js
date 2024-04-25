@@ -30,7 +30,7 @@ export const windData = {
   ],
 };
 
-export const rainData = {
+export const rainData1 = {
   labels: ["March", "April", "May"],
   datasets: [
     {
@@ -42,6 +42,12 @@ export const rainData = {
       hoverBorderColor: "rgba(75,192,192,1)",
       data: [65, 59, 80],
     },
+  ],
+};
+
+export const rainData2 = {
+  labels: ["March", "April", "May"],
+  datasets: [
     {
       label: "Maximum",
       backgroundColor: "rgba(75,192,192,0.2)",
