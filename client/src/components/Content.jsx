@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import WindChart from "./windChart";
 import RainChart from "./rainChart";
+import axios from 'axios'
 import { LuWaves } from "react-icons/lu";
 
 // icons
@@ -12,6 +13,15 @@ function Content() {
   // set stage for loading page
   const [loading, setLoading] = useState(false);
 
+  //  Weather Data
+  
+  //  Current Weather Data
+  const [latestWeatherData, setLatestWeatherData] = useState([{}])
+
+  // All Weather Data
+  const [weatherData, setWeatherData] = useState([{}])
+
+
   useEffect(() => {
     const loadPost = async () => {
       // Till the data is fetch using API
@@ -20,6 +30,9 @@ function Content() {
 
       // Await make wait until that
       // promise settles and return its result
+
+      
+
       // const response = await fetch('https://jsonplaceholder.typicode.com/posts/');
 
       // After fetching data stored it in posts state.
@@ -28,8 +41,20 @@ function Content() {
       setLoading(false);
     };
 
+    // Fetch current weather data
+    axios.get('http://localhost:3000/api/getCurrent')
+      .then(currWeather => setLatestWeatherData(currWeather.data))
+      .catch(err => console.log(err))
+
+    // Fetch all weather data
+    axios.get('http://localhost:3000/api/getAll')
+      .then(weather => setWeatherData(weather.data))
+      .catch(err => console.log(err))
+  
+
     // Call the function
     loadPost();
+    
   }, []);
   return (
     <>
@@ -96,7 +121,7 @@ function Content() {
                         <div className="numbers">
                           <div>
                             <p className="card-category">Temperature</p>
-                            <h4 className="card-title">39°C</h4>
+                            <h4 className="card-title">{latestWeatherData[0].temp}°C</h4>
                           </div>
                         </div>
                       </div>
@@ -125,7 +150,7 @@ function Content() {
                         <div className="numbers">
                           <div>
                             <p className="card-category">Humidity</p>
-                            <h4 className="card-title">23%</h4>
+                            <h4 className="card-title">{latestWeatherData[0].humidity}%</h4>
                           </div>
                         </div>
                       </div>
@@ -154,7 +179,7 @@ function Content() {
                         <div className="numbers">
                           <div>
                             <p className="card-category">Barometric Pressure</p>
-                            <h4 className="card-title">100700 Pa</h4>
+                            <h4 className="card-title">{latestWeatherData[0].baroPressure} Pa</h4>
                           </div>
                         </div>
                       </div>
@@ -192,7 +217,7 @@ function Content() {
                         <div className="numbers">
                           <div>
                             <p className="card-category">Avg Wind Speed</p>
-                            <h4 className="card-title">0 m/s</h4>
+                            <h4 className="card-title">{latestWeatherData[0].avgWindSpd} m/s</h4>
                           </div>
                         </div>
                       </div>
@@ -209,7 +234,7 @@ function Content() {
                         <div className="numbers">
                           <div>
                             <p className="card-category">Max Wind Speed</p>
-                            <h4 className="card-title">0 m/s</h4>
+                            <h4 className="card-title">{latestWeatherData[0].mxWindSpd} m/s</h4>
                           </div>
                         </div>
                       </div>
@@ -226,7 +251,7 @@ function Content() {
                         <div className="numbers">
                           <div>
                             <p className="card-category">Wind Direction</p>
-                            <h4 className="card-title">0 °</h4>
+                            <h4 className="card-title">{latestWeatherData[0].windDirect} °</h4>
                           </div>
                         </div>
                       </div>
@@ -262,120 +287,21 @@ function Content() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1,001</td>
-                    <td>random</td>
-                    <td>data</td>
-                    <td>placeholder</td>
-                    <td>text</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                  </tr>
-                  <tr>
-                    <td>1,002</td>
-                    <td>placeholder</td>
-                    <td>irrelevant</td>
-                    <td>visual</td>
-                    <td>layout</td>
-                  </tr>
-                  <tr>
-                    <td>1,003</td>
-                    <td>data</td>
-                    <td>rich</td>
-                    <td>dashboard</td>
-                    <td>tabular</td>
-                  </tr>
-                  <tr>
-                    <td>1,003</td>
-                    <td>information</td>
-                    <td>placeholder</td>
-                    <td>illustrative</td>
-                    <td>data</td>
-                  </tr>
-                  <tr>
-                    <td>1,004</td>
-                    <td>text</td>
-                    <td>random</td>
-                    <td>layout</td>
-                    <td>dashboard</td>
-                  </tr>
-                  <tr>
-                    <td>1,005</td>
-                    <td>dashboard</td>
-                    <td>irrelevant</td>
-                    <td>text</td>
-                    <td>placeholder</td>
-                  </tr>
-                  <tr>
-                    <td>1,006</td>
-                    <td>dashboard</td>
-                    <td>illustrative</td>
-                    <td>rich</td>
-                    <td>data</td>
-                  </tr>
-                  <tr>
-                    <td>1,007</td>
-                    <td>placeholder</td>
-                    <td>tabular</td>
-                    <td>information</td>
-                    <td>irrelevant</td>
-                  </tr>
-                  <tr>
-                    <td>1,008</td>
-                    <td>random</td>
-                    <td>data</td>
-                    <td>placeholder</td>
-                    <td>text</td>
-                  </tr>
-                  <tr>
-                    <td>1,009</td>
-                    <td>placeholder</td>
-                    <td>irrelevant</td>
-                    <td>visual</td>
-                    <td>layout</td>
-                  </tr>
-                  <tr>
-                    <td>1,010</td>
-                    <td>data</td>
-                    <td>rich</td>
-                    <td>dashboard</td>
-                    <td>tabular</td>
-                  </tr>
-                  <tr>
-                    <td>1,011</td>
-                    <td>information</td>
-                    <td>placeholder</td>
-                    <td>illustrative</td>
-                    <td>data</td>
-                  </tr>
-                  <tr>
-                    <td>1,012</td>
-                    <td>text</td>
-                    <td>placeholder</td>
-                    <td>layout</td>
-                    <td>dashboard</td>
-                  </tr>
-                  <tr>
-                    <td>1,013</td>
-                    <td>dashboard</td>
-                    <td>irrelevant</td>
-                    <td>text</td>
-                    <td>visual</td>
-                  </tr>
-                  <tr>
-                    <td>1,014</td>
-                    <td>dashboard</td>
-                    <td>illustrative</td>
-                    <td>rich</td>
-                    <td>data</td>
-                  </tr>
-                  <tr>
-                    <td>1,015</td>
-                    <td>random</td>
-                    <td>tabular</td>
-                    <td>information</td>
-                    <td>text</td>
-                  </tr>
+                  {
+                    weatherData.map(function(weather, index){
+                      return (
+                        <tr key={index}>
+                          <td scope="row">{weather.recordDate}</td>
+                          <td scope="row">{weather.temp}</td>
+                          <td scope="row">{weather.humidity}</td>
+                          <td scope="row">{weather.baroPressure}</td>
+                          <td scope="row">{weather.avgWindSpd}</td>
+                          <td scope="row">{weather.mxWindSpd}</td>
+                          <td scope="row">{weather.windDirect}</td>
+                        </tr>
+                      );
+                    })
+                  }
                 </tbody>
               </table>
             </div>
