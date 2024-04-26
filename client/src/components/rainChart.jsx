@@ -43,10 +43,10 @@ function RainChart() {
   //   const [chartData, setChartData] = useState(rainData);
   return (
     <>
-      <div className="col-6">
+      <div className="col-lg-6 col-md-12 col-sm-12">
         <Bar options={options} data={rainData1} />
       </div>
-      <div className="col-6">
+      <div className="col-lg-6 col-md-12 col-sm-12">
         <Bar options={options} data={rainData2} />
       </div>
     </>

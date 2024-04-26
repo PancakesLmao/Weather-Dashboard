@@ -1,6 +1,8 @@
 // Import files
 import React, { useState, useEffect } from "react";
+import { Outlet, Link } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
+import { MdOutlineLogin } from "react-icons/md";
 //
 function Header() {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -27,7 +29,7 @@ function Header() {
             </h1>
           </div>
           <button
-            className="navbar-toggler position-absolute d-md-none collapsed col-5 text-dark"
+            className="navbar-toggler position-absolute d-md-none collapsed col-4 text-dark"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu"
@@ -43,16 +45,18 @@ function Header() {
             placeholder="Search"
             aria-label="Search"
           />
-          <div className="navbar-nav col-1">
+          <div className="navbar-nav col-2">
             <div className="nav-item text-nowrap">
-              <a className="nav-link px-3" href="#">
+              <Link to="/login" className="nav-link px-3">
                 <button type="button" className="btn btn-outline-secondary">
-                  Login
+                  <MdOutlineLogin className="login-icon" />
+                  &nbsp; Login
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
         </header>
+        <Outlet />
       </div>
     </>
   );
