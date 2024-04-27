@@ -1,6 +1,5 @@
 // Import files
 import React, { useState, useEffect } from "react";
-import { Outlet, Link } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineLogin } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
@@ -71,7 +70,6 @@ function Header() {
           </div> */}
         </div>
       </header>
-      <Outlet />
     </>
   );
 }
