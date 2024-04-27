@@ -7,7 +7,6 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import "./App.css";
 
-
 function App() {
   return (
     <>
@@ -18,6 +17,7 @@ function App() {
               <Sidebar />
               <Header />
               {/* Router */}
+
               <Routes>
                 <Route index element={<Dashboard />} />
                 <Route path="/" element={<Dashboard />} />

@@ -4,6 +4,8 @@ import { RxDashboard } from "react-icons/rx";
 import { IoIosHome } from "react-icons/io";
 import { BiSolidReport } from "react-icons/bi";
 import { FaGoogleDrive } from "react-icons/fa";
+import { MdOutlineLogin } from "react-icons/md";
+import { IoMenu } from "react-icons/io5";
 //
 function Sidebar() {
   return (
@@ -14,12 +16,11 @@ function Sidebar() {
           data-color="black"
           className="col-md-3 col-lg-2 d-md-block sidebar collapse container"
         >
-          <div className="position-sticky text-white side-content">
-            <div className="container logo">
-              <h3 className="nav-brand px-2">AsianMurphy</h3>
-            </div>
-
+          <div className="position-sticky text-white side-content side-wrapper">
             <ul className="nav flex-column">
+              <div className="container logo">
+                <h3 className="nav-brand px-2">AsianMurphy</h3>
+              </div>
               <li className="nav-item">
                 <Link to="/">
                   <a className="nav-link" aria-current="page" href="#">
@@ -67,8 +68,32 @@ function Sidebar() {
                 </a>
               </li>
             </ul>
+            <ul>
+              <div className="navbar-nav col-2">
+                <div className="nav-item text-nowrap">
+                  <Link to="/login" className="nav-link px-3">
+                    <button type="button" className="btn btn-outline-light">
+                      <MdOutlineLogin className="login-icon" />
+                      &nbsp; Login
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </ul>
           </div>
         </nav>
+        {/* Menu Toggler */}
+        {/* <button
+          className="navbar-toggler mt-4 fixed-top d-md-none collapsed text-dark w-25"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#sidebarMenu"
+          aria-controls="sidebarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <IoMenu className="navbar-toggler-icon text-dark" />
+        </button> */}
       </div>
       <Outlet />
     </>

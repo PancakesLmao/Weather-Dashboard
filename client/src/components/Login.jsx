@@ -2,7 +2,7 @@
 function Login () {
     return (
         <>
-            <div>Loading...</div>
+            <div className="mt-5">Loading...</div>
         </>
     );
 }
