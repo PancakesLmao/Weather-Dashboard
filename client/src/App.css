@@ -124,11 +124,12 @@ body {
   margin-right: 4px;
   /* color: #727272; */
   color: white;
+  text-decoration: none !important;
 }
 
 .sidebar .nav-link.active {
   /* color: #2470dc; */
-  color: wheat;
+  color: wheat !important;
 }
 
 .sidebar .nav-link:hover .feather,

@@ -1,5 +1,5 @@
 // import files
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import { RxDashboard } from "react-icons/rx";
 import { IoIosHome } from "react-icons/io";
 import { BiSolidReport } from "react-icons/bi";
@@ -8,6 +8,8 @@ import { MdOutlineLogin } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
 //
 function Sidebar() {
+  const PageLocation = useLocation();
+  console.log(PageLocation);
   return (
     <>
       <div className="sideBar">
@@ -22,29 +24,38 @@ function Sidebar() {
                 <h3 className="nav-brand px-2">AsianMurphy</h3>
               </div>
               <li className="nav-item">
-                <Link to="/">
-                  <a className="nav-link" aria-current="page" href="#">
-                    <IoIosHome className="side-icon" />
-                    &nbsp;Home
-                  </a>
+                <Link
+                  className={`nav-link ${
+                    location.pathname === "/" ? "active" : ""
+                  }`}
+                  to="/"
+                >
+                  <IoIosHome className="side-icon" />
+                  &nbsp;Home
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link to="/dashboard">
-                  <a className="nav-link active" href="#">
-                    <RxDashboard className="side-icon" />
-                    &nbsp;Dashboard
-                  </a>
+                <Link
+                  className={`nav-link ${
+                    location.pathname === "/dashboard" ? "active" : ""
+                  }`}
+                  to="/dashboard"
+                >
+                  <RxDashboard className="side-icon" />
+                  &nbsp;Dashboard
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link to="/reports">
-                  <a className="nav-link" href="#">
-                    <BiSolidReport className="side-icon" />
-                    &nbsp;Reports
-                  </a>
+                <Link
+                  className={`nav-link ${
+                    location.pathname === "/reports" ? "active" : ""
+                  }`}
+                  to="/reports"
+                >
+                  <BiSolidReport className="side-icon" />
+                  &nbsp;Reports
                 </Link>
               </li>
             </ul>

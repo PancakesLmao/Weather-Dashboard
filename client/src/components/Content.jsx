@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import WindChart from "./windChart";
 import RainChart from "./rainChart";
-import axios from 'axios'
+import axios from "axios";
 import { LuWaves } from "react-icons/lu";
 
 // icons
@@ -14,13 +14,12 @@ function Content() {
   const [loading, setLoading] = useState(false);
 
   //  Weather Data
-  
+
   //  Current Weather Data
-  const [latestWeatherData, setLatestWeatherData] = useState([{}])
+  const [latestWeatherData, setLatestWeatherData] = useState([{}]);
 
   // All Weather Data
-  const [weatherData, setWeatherData] = useState([{}])
-
+  const [weatherData, setWeatherData] = useState([{}]);
 
   useEffect(() => {
     const loadPost = async () => {
@@ -31,8 +30,6 @@ function Content() {
       // Await make wait until that
       // promise settles and return its result
 
-      
-
       // const response = await fetch('https://jsonplaceholder.typicode.com/posts/');
 
       // After fetching data stored it in posts state.
@@ -42,19 +39,19 @@ function Content() {
     };
 
     // Fetch current weather data
-    axios.get('http://localhost:3000/api/getCurrent')
-      .then(currWeather => setLatestWeatherData(currWeather.data))
-      .catch(err => console.log(err))
+    axios
+      .get("http://localhost:3000/api/getCurrent")
+      .then((currWeather) => setLatestWeatherData(currWeather.data))
+      .catch((err) => console.log(err));
 
     // Fetch all weather data
-    axios.get('http://localhost:3000/api/getAll')
-      .then(weather => setWeatherData(weather.data))
-      .catch(err => console.log(err))
-  
+    axios
+      .get("http://localhost:3000/api/getAll")
+      .then((weather) => setWeatherData(weather.data))
+      .catch((err) => console.log(err));
 
     // Call the function
     loadPost();
-    
   }, []);
   return (
     <>
@@ -121,7 +118,9 @@ function Content() {
                         <div className="numbers">
                           <div>
                             <p className="card-category">Temperature</p>
-                            <h4 className="card-title">{latestWeatherData[0].temp}°C</h4>
+                            <h4 className="card-title">
+                              {latestWeatherData[0].temp}°C
+                            </h4>
                           </div>
                         </div>
                       </div>
@@ -150,7 +149,9 @@ function Content() {
                         <div className="numbers">
                           <div>
                             <p className="card-category">Humidity</p>
-                            <h4 className="card-title">{latestWeatherData[0].humidity}%</h4>
+                            <h4 className="card-title">
+                              {latestWeatherData[0].humidity}%
+                            </h4>
                           </div>
                         </div>
                       </div>
@@ -179,7 +180,9 @@ function Content() {
                         <div className="numbers">
                           <div>
                             <p className="card-category">Barometric Pressure</p>
-                            <h4 className="card-title">{latestWeatherData[0].baroPressure} Pa</h4>
+                            <h4 className="card-title">
+                              {latestWeatherData[0].baroPressure} Pa
+                            </h4>
                           </div>
                         </div>
                       </div>
@@ -217,7 +220,9 @@ function Content() {
                         <div className="numbers">
                           <div>
                             <p className="card-category">Avg Wind Speed</p>
-                            <h4 className="card-title">{latestWeatherData[0].avgWindSpd} m/s</h4>
+                            <h4 className="card-title">
+                              {latestWeatherData[0].avgWindSpd} m/s
+                            </h4>
                           </div>
                         </div>
                       </div>
@@ -234,7 +239,9 @@ function Content() {
                         <div className="numbers">
                           <div>
                             <p className="card-category">Max Wind Speed</p>
-                            <h4 className="card-title">{latestWeatherData[0].mxWindSpd} m/s</h4>
+                            <h4 className="card-title">
+                              {latestWeatherData[0].mxWindSpd} m/s
+                            </h4>
                           </div>
                         </div>
                       </div>
@@ -251,7 +258,9 @@ function Content() {
                         <div className="numbers">
                           <div>
                             <p className="card-category">Wind Direction</p>
-                            <h4 className="card-title">{latestWeatherData[0].windDirect} °</h4>
+                            <h4 className="card-title">
+                              {latestWeatherData[0].windDirect} °
+                            </h4>
                           </div>
                         </div>
                       </div>
@@ -267,9 +276,9 @@ function Content() {
               {/* Wind chart */}
               <WindChart />
             </div>
-            <div className="row my-4">
-              <RainChart />
-            </div>
+              
+            {/* Rain Chart */}
+            <RainChart />
 
             {/* Records */}
             <h2>Datasheet</h2>
@@ -287,21 +296,19 @@ function Content() {
                   </tr>
                 </thead>
                 <tbody>
-                  {
-                    weatherData.map(function(weather, index){
-                      return (
-                        <tr key={index}>
-                          <td scope="row">{weather.recordDate}</td>
-                          <td scope="row">{weather.temp}</td>
-                          <td scope="row">{weather.humidity}</td>
-                          <td scope="row">{weather.baroPressure}</td>
-                          <td scope="row">{weather.avgWindSpd}</td>
-                          <td scope="row">{weather.mxWindSpd}</td>
-                          <td scope="row">{weather.windDirect}</td>
-                        </tr>
-                      );
-                    })
-                  }
+                  {weatherData.map(function (weather, index) {
+                    return (
+                      <tr key={index}>
+                        <td scope="row">{weather.recordDate}</td>
+                        <td scope="row">{weather.temp}</td>
+                        <td scope="row">{weather.humidity}</td>
+                        <td scope="row">{weather.baroPressure}</td>
+                        <td scope="row">{weather.avgWindSpd}</td>
+                        <td scope="row">{weather.mxWindSpd}</td>
+                        <td scope="row">{weather.windDirect}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
