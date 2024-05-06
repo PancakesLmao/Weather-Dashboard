@@ -295,3 +295,22 @@ body {
   letter-spacing: 1px;
   color: black;
   font-weight: 700; }
+
+  /* Datasheet Pagination */
+  table {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.875rem;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td,
+  th {
+    border: 1px solid #808080;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #fff;
+  }
+

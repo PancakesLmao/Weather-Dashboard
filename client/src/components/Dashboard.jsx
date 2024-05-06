@@ -92,7 +92,7 @@ function Dashboard() {
                       <div className="numbers">
                         <div>
                           <p className="card-category">Temperature</p>
-                          <h4 className="card-title">39°C</h4>
+                          <h4 className="card-title">31°C</h4>
                         </div>
                       </div>
                     </div>
@@ -121,7 +121,7 @@ function Dashboard() {
                       <div className="numbers">
                         <div>
                           <p className="card-category">Humidity</p>
-                          <h4 className="card-title">23%</h4>
+                          <h4 className="card-title">63%</h4>
                         </div>
                       </div>
                     </div>
@@ -150,7 +150,7 @@ function Dashboard() {
                       <div className="numbers">
                         <div>
                           <p className="card-category">Barometric Pressure</p>
-                          <h4 className="card-title">100700 Pa</h4>
+                          <h4 className="card-title">101.325 Pa</h4>
                         </div>
                       </div>
                     </div>

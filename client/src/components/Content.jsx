@@ -1,5 +1,11 @@
 // Import files
 import React, { useState, useEffect } from "react";
+import { styled } from "@mui/system";
+import {
+  TablePagination,
+  tablePaginationClasses as classes,
+} from "@mui/base/TablePagination";
+
 import WindChart from "./windChart";
 import RainChart from "./rainChart";
 import axios from "axios";
@@ -21,6 +27,24 @@ function Content() {
   // All Weather Data
   const [weatherData, setWeatherData] = useState([{}]);
 
+  // Table Pagination
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+
+  // Avoid a layout jump when reaching the last page with empty rows.
+  const emptyRows =
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - weatherData.length) : 0;
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+  //
+  console.log(weatherData.length);
   useEffect(() => {
     const loadPost = async () => {
       // Till the data is fetch using API
@@ -276,7 +300,7 @@ function Content() {
               {/* Wind chart */}
               <WindChart />
             </div>
-              
+
             {/* Rain Chart */}
             <RainChart />
 
@@ -293,32 +317,63 @@ function Content() {
                     <th scope="col">Average wind speed (m/s)</th>
                     <th scope="col">Max wind speed (m/s)</th>
                     <th scope="col">Wind direction (degree)</th>
+                    <th scope="col">Rain per Hour (mm)</th>
+                    <th scope="col">Rain per Day (mm)</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {weatherData.map(function (weather, index) {
-                    return (
-                      <tr key={index}>
-                        <td scope="row">{weather.recordDate}</td>
-                        <td scope="row">{weather.temp}</td>
-                        <td scope="row">{weather.humidity}</td>
-                        <td scope="row">{weather.baroPressure}</td>
-                        <td scope="row">{weather.avgWindSpd}</td>
-                        <td scope="row">{weather.mxWindSpd}</td>
-                        <td scope="row">{weather.windDirect}</td>
-                      </tr>
-                    );
-                  })}
+                  {weatherData
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .map(function (weather, index) {
+                      return (
+                        <tr key={index}>
+                          <td scope="row">{weather.recordDate}</td>
+                          <td scope="row">{weather.temp}</td>
+                          <td scope="row">{weather.humidity}</td>
+                          <td scope="row">{weather.baroPressure}</td>
+                          <td scope="row">{weather.avgWindSpd}</td>
+                          <td scope="row">{weather.mxWindSpd}</td>
+                          <td scope="row">{weather.windDirect}</td>
+                          <td scope="row">{weather.rainPerHr}</td>
+                          <td scope="row">{weather.rainPerDay}</td>
+                        </tr>
+                      );
+                    })}
                 </tbody>
+                {/* Table Pagination */}
+                <tfoot>
+                  <tr>
+                    <TablePagination
+                      className="pagination"
+                      rowsPerPageOptions={[20, 50, 100]}
+                      colSpan={3}
+                      count={weatherData.length}
+                      rowsPerPage={rowsPerPage}
+                      page={page}
+                      slotProps={{
+                        select: {
+                          "aria-label": "rows per page",
+                        },
+                        actions: {
+                          showFirstButton: true,
+                          showLastButton: true,
+                        },
+                      }}
+                      onPageChange={handleChangePage}
+                      onRowsPerPageChange={handleChangeRowsPerPage}
+                    />
+                  </tr>
+                </tfoot>
               </table>
             </div>
             {/* END OF CONTENT PAGE */}
           </main>
         )}
-        ;
       </div>
     </>
   );
 }
+
+
 
 export default Content;
