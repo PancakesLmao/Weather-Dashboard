@@ -18,7 +18,7 @@ router.get('/getCurrent', async (req,res) => {
 //Get All
 router.get('/getAll', async (req,res) => {
     try{
-        const data = await Model.find().sort({_id:-1});
+        const data = await Model.find().sort({_id:-1}).limit(2000);
         console.log(data);
         res.json(data);
     }
