@@ -29,7 +29,8 @@ function WindChart() {
 
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/getWindChartData")     
+    const loadWindChart = async () => {
+      axios.get("http://localhost:3000/api/getWindChartData")     
     .then(res => {
       const data = res.data;
       const dates = data.map(entry => entry._id);
@@ -62,6 +63,15 @@ function WindChart() {
 
     })
     .catch(err => console.log(err))
+    }
+
+loadWindChart();
+const intervalId = setInterval(() => {
+  loadWindChart();
+}, 60000);
+return () => clearInterval(intervalId);
+
+
   },[])
 
 

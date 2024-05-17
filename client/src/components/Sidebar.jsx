@@ -9,7 +9,7 @@ import { IoMenu } from "react-icons/io5";
 //
 function Sidebar() {
   const PageLocation = useLocation();
-  console.log(PageLocation);
+  // console.log(PageLocation);
   return (
     <>
       <div className="sideBar">

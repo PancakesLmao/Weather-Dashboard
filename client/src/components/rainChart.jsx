@@ -46,7 +46,8 @@ function RainChart() {
   const [chartData2, setChartData2] = useState(null);
 
   useEffect(() => {
-    axios
+    const loadRainChart = async () => {
+      axios
       .get("http://localhost:3000/api/getRainChartData")
       .then((res) => {
         const data = res.data;
@@ -87,6 +88,15 @@ function RainChart() {
         });
       })
       .catch((err) => console.log(err));
+    }
+
+    loadRainChart();
+
+    const intervalId = setInterval(() => {
+      loadRainChart();
+    }, 60000);
+    return () => clearInterval(intervalId);
+    
   }, []);
 
   return (

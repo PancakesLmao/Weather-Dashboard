@@ -29,7 +29,7 @@ function Content() {
 
   // Table Pagination
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(20);
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -58,24 +58,31 @@ function Content() {
 
       // After fetching data stored it in posts state.
 
+        // Fetch current weather data
+    axios
+    .get("http://localhost:3000/api/getCurrent")
+    .then((currWeather) => setLatestWeatherData(currWeather.data))
+    .catch((err) => console.log(err));
+
+  // Fetch all weather data
+  axios
+    .get("http://localhost:3000/api/getAll")
+    .then((weather) => setWeatherData(weather.data))
+    .catch((err) => console.log(err));
+
       // Closed the loading page
       setLoading(false);
     };
 
-    // Fetch current weather data
-    axios
-      .get("http://localhost:3000/api/getCurrent")
-      .then((currWeather) => setLatestWeatherData(currWeather.data))
-      .catch((err) => console.log(err));
-
-    // Fetch all weather data
-    axios
-      .get("http://localhost:3000/api/getAll")
-      .then((weather) => setWeatherData(weather.data))
-      .catch((err) => console.log(err));
-
+    
     // Call the function
     loadPost();
+
+      const intervalId = setInterval(() => {
+        loadPost();
+      }, 5000);
+      return () => clearInterval(intervalId);
+
   }, []);
   return (
     <>

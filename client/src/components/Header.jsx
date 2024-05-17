@@ -12,7 +12,7 @@ function Header() {
   // Clock ticking effect
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentDate(new Date());
+      setCurrentDate(new Date()); 
     }, 1000);
     return () => clearInterval(intervalId);
   }, []);

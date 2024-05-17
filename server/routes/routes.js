@@ -48,7 +48,7 @@ router.get('/getWindChartData', async (req,res) => {
                   maxWindSpeed: "$maxWindSpeed"
                 }
               }
-        ])
+        ]).sort({_id:1})
 
         res.json(data);
     } 
@@ -109,4 +109,4 @@ router.get('/getRainChartData', async (req,res) => {
 
 })
 
-module.exports = router;
+module.exports = router; 
