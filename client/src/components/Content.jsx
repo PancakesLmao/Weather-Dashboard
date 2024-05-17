@@ -1,10 +1,8 @@
 // Import files
 import React, { useState, useEffect } from "react";
 import { styled } from "@mui/system";
-import {
-  TablePagination,
-  tablePaginationClasses as classes,
-} from "@mui/base/TablePagination";
+import { TablePagination } from "@mui/base/TablePagination";
+import { CustomTablePagination } from "../css/tablePagination";
 
 import WindChart from "./windChart";
 import RainChart from "./rainChart";
@@ -350,7 +348,7 @@ function Content() {
                 {/* Table Pagination */}
                 <tfoot>
                   <tr>
-                    <TablePagination
+                    <CustomTablePagination
                       className="pagination"
                       rowsPerPageOptions={[20, 50, 100]}
                       colSpan={3}
@@ -380,7 +378,5 @@ function Content() {
     </>
   );
 }
-
-
 
 export default Content;
