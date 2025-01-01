@@ -235,7 +235,7 @@ function Content() {
                 height="180"
                 ></canvas> */}
               {/* Wind statistic */}
-              <div className="col-3">
+              <div className="col-lg-3 col-md-12 col-sm-12">
                 <div className="card h-100">
                   <div className="card-body">
                     {/* 1st row */}
@@ -307,7 +307,9 @@ function Content() {
             </div>
 
             {/* Rain Chart */}
-            <RainChart />
+            <div className="row my-4">
+              <RainChart />
+            </div>
 
             {/* Records */}
             <h2>Datasheet</h2>
