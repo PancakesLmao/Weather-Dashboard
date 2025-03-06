@@ -1,3 +1,4 @@
+![Demo image](https://cdn.jsdelivr.net/gh/PancakesLmao/Weather-Dashboard@master/client/weather%20dashboard.png)
 <h2>Deploy project locally:</h2>
 
 <p>1. Clone this project to your device using the following command:</p>
@@ -9,7 +10,7 @@ git clone https://github.com/asianmurphyCo/Weather-Dashboard.git
 
 ```
 cd server
-nodejs server.js
+node server.js
 ```
 <p>3. Navigate to the project's client folder and install dependencies.</p>
 
