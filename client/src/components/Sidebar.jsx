@@ -5,7 +5,6 @@ import { IoIosHome } from "react-icons/io";
 import { BiSolidReport } from "react-icons/bi";
 import { FaGoogleDrive } from "react-icons/fa";
 import { MdOutlineLogin } from "react-icons/md";
-import { IoMenu } from "react-icons/io5";
 //
 function Sidebar() {
   const PageLocation = useLocation();
@@ -50,12 +49,12 @@ function Sidebar() {
               <li className="nav-item">
                 <Link
                   className={`nav-link ${
-                    location.pathname === "/reports" ? "active" : ""
+                    location.pathname === "/dataset" ? "active" : ""
                   }`}
-                  to="/reports"
+                  to="/dataset"
                 >
                   <BiSolidReport className="side-icon" />
-                  &nbsp;Reports
+                  &nbsp;Dataset
                 </Link>
               </li>
             </ul>
@@ -71,12 +70,18 @@ function Sidebar() {
                 <span data-feather="plus-circle"></span>
               </a>
             </h6>
+            {/*  */}
             <ul className="nav flex-column mb-2">
-              <li className="nav-item">
-                <a className="nav-link" href="#">
+              <li className="nav-item nav-link">
+                {/* <Link
+                  className={`nav-link ${
+                    location.pathname === "/dataset" ? "active" : ""
+                  }`}
+                  to="/dataset"
+                > */}
                   <FaGoogleDrive className="slide-icon" />
                   &nbsp;Google Drive
-                </a>
+                {/* </Link> */}
               </li>
             </ul>
             <ul>

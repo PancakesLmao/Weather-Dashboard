@@ -5,16 +5,21 @@
 ```
 git clone https://github.com/asianmurphyCo/Weather-Dashboard.git
 ```
+<p>2. Once the download is complete, navigate to server folder and run the backend service</p>
 
-<p>2. Once the download is complete navigate to the project's client folder and install dependencies.</p>
+```
+cd server
+nodejs server.js
+```
+<p>3. Navigate to the project's client folder and install dependencies.</p>
 
 ```
 cd client
 npm install
 ```
-
-<p>3. Finally to host the project locally execute the following command:</p>
+<p>4. To host the project locally execute the following command:</p>
 
 ```
 npm run dev
 ```
+Or use the current url for online web, but make sure to run the backend first
